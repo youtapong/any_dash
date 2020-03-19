@@ -1,0 +1,7 @@
+{
+  "name": "any_dash",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "any_dash",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
