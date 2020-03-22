@@ -1,0 +1,177 @@
+
+<ion-content class="ion-padding" color="darkmode">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-item href="#" class="activated">
+              <img slot="start" src="./assets/svg/house.svg" style="width: 32px; height: 32px;" (click)="goHome()">
+              <ion-label>Card Link Item 1 .activated</ion-label>
+              <img src="./assets/icon/person.png" padding />
+            </ion-item>
+            <ion-card-content>
+              Data from databases.
+            </ion-card-content>
+            <ion-row>
+              <ion-col width-50 style="text-align:center">
+                <ion-button color="success" small round large (click)="goHome()">&nbsp;
+                  <ion-icon name="bulb"></ion-icon>&nbsp;Edit Profie&nbsp;
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ion-col>
+
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="medium">
+            <ion-item href="#">
+              <img slot="start" src="./assets/svg/customer.svg" style="width: 48px; height: 48px;">
+              <ion-label>{{this.Product_Name}}</ion-label>
+            </ion-item>
+            <ion-item class="activated">
+              <img slot="start" src="./assets/svg/television-1.svg" style="width: 32px; height: 32px;">
+              <ion-label>{{this.companyName}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <img slot="start" src="./assets/svg/folder-13.svg" style="width: 32px; height: 32px;">
+              <ion-label>{{this.customerTypeName}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <img slot="start" src="./assets/svg/worldwide.svg" style="width: 32px; height: 32px;">
+              <ion-label>customerId : {{this.customerId}}</ion-label>
+            </ion-item>
+            <ion-row>
+              <ion-col width-50 style="text-align:center">
+                <ion-button color="success" small round large
+                  (click)="custDetail(companyName,customerClass, BA_BillHanding, BillAddr_Detail, BillAddr_ID, m4_total, m4_actualBill, m3_total, m3_actualBill, m2_total, m2_actualBill)">
+                  &nbsp;
+                  <ion-icon name="bulb"></ion-icon>&nbsp;Detail&nbsp;
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>ข้อมูลวงจร</ion-card-subtitle>
+              <ion-card-title>Id {{cus_id}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+              {{ncd_device}}
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>สรุป  MPLS Serverity </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              0 = xxx <br>
+              0 = yyy <br>
+              0 = zzz <br>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>สรุป C-ISP Serverity </ion-card-subtitle>
+              <ion-card-title>Id {{cus_id}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+              {{ncd_device}}
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>สรุป R-ISP Serverity </ion-card-subtitle>
+              <ion-card-title>Id {{cus_id}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+              {{ncd_device}}
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>ข้อมูล Latency </ion-card-subtitle>
+              <ion-card-title></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>ข้อมูล CPE Scaner </ion-card-subtitle>
+              <ion-card-title></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>รายงานข้อมูล แบบ zzzz </ion-card-subtitle>
+              <ion-card-title>การใช้งาน</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas id="doughnut-chart" width="100" height="100"></canvas>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="3" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-subtitle>เอกสารด้านความปลอดภัย </ion-card-subtitle>
+              <ion-card-title></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>xxx
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

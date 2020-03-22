@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color='darkblue'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon slot="start" color="light" name="home"></ion-icon>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="./assets/images/logo01.png" alt="Main" />
+    <ion-card-header>
+      <ion-card-subtitle>Data from Broadband</ion-card-subtitle>
+      <ion-card-title>Welcome to BB Dashboard </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>ทดสอบ การทำระบบข้อมูลรวมโครงข่าย</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card" color="tong_color">
+    <ion-card-header>
+      <ion-card-title>Resource</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <ion-list>
+
+          <ion-item>
+            <img slot="start" src="./assets/svg/folder-10.svg" style="width: 24px; height: 24px;">
+            <ion-label>
+              <ion-button expand="block" color="primary" round large (click)="goMixDash()">
+                สรุปรายงาน
+              </ion-button>
+            </ion-label>
+          </ion-item>
+
+
+
+
+
+        </ion-list>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
