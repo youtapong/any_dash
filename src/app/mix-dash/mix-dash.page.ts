@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { IpaddrService } from '../ipaddr.service';
+import { IpaddrService } from '../ipaddr';
 import { LoadingController, AlertController, MenuController, NavController } from '@ionic/angular';
 
 interface resultData {
