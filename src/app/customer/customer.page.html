@@ -33,18 +33,47 @@
             </ion-row>
             <ion-row>
               <ion-col size="6">
-                <ion-label>ชื่อองกรณ์ :  {{ncd_customer["ncd_customer1"]}}</ion-label>
+                <ion-label *ngFor="let cus of ncd_customer | keyvalue">
+                  ชื่อองกรณ์ :  {{cus.value[1]}}
+                </ion-label>
               </ion-col>
               <ion-col size="6">
-                <ion-label>อุปกรณ์ :  {{ncd_device["ncd_device1"]}}</ion-label>
+                <ion-label>
+                  อุปกรณ์ :  
+                  <ion-label *ngFor="let device of ncd_device | keyvalue">
+                    {{device.value[1]}},
+                  </ion-label>
+                </ion-label>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col size="6">
-                <ion-label>บริการ :  {{ncd_services["ncd_services1"]}}</ion-label>
+                <ion-label >
+                  บริการ :  
+                  <ion-label *ngFor="let service of ncd_services | keyvalue">
+                    {{service.value[1]}}
+                  </ion-label>
+                </ion-label>
               </ion-col>
               <ion-col size="6">
-                <ion-label>IP WAN :  {{ncd_ip_wan["ncd_ip_wan1"]}}</ion-label>
+                <ion-label *ngFor="let ip of ncd_ip_wan | keyvalue">
+                  IP WAN :  {{ip.value[1]}}
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-label >
+                  interface :  
+                  <ion-label *ngFor="let interf of ncd_interface | keyvalue">
+                    {{interf.value[1]}}
+                  </ion-label>
+                </ion-label>
+              </ion-col>
+              <ion-col size="6">
+                <ion-label *ngFor="let vrf of ncd_vrf | keyvalue">
+                  VRF:  {{vrf.value[1]}}
+                </ion-label>
               </ion-col>
             </ion-row>
           
