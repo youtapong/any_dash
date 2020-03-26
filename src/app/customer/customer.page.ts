@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IpaddrService } from '../ipaddr';
+import { IpaddrService } from '../ipaddr.service';
 import { HttpClient } from '@angular/common/http';
 
 import { Subscription, from } from 'rxjs';
