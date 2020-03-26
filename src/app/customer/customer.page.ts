@@ -28,7 +28,7 @@ interface resultData {
   styleUrls: ['./customer.page.scss'],
 })
 export class CustomerPage implements OnInit {
-
+  public isShowCard = true;
   
   public service_id: string = ''; // เก็บข้อความที่ใช้ค้น
   public CustomerName: string = ''; // เก็บข้อความที่ใช้ค้น
@@ -57,8 +57,11 @@ export class CustomerPage implements OnInit {
     
   }
 
-
+  clear(){
+    window.location.reload();
+  }
   getCust() {
+    this.isShowCard = false;
     this.ip_addr3 = this.IpaddrService.ip_addr3;
     this.sub = this.http.get(
       this.ip_addr3 + this.service_id

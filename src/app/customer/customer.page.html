@@ -18,10 +18,13 @@
             <ion-button color="success" small round large (click)="getCust()">
               <ion-icon name="search"></ion-icon>&nbsp;Search
             </ion-button>
+            <ion-button color="warning" small round large (click)="clear()">
+              <ion-icon name="refresh"></ion-icon>&nbsp;clear
+            </ion-button>
           </ion-col>
         </ion-row>
 
-        <ion-card>
+        <ion-card *ngIf="!isShowCard">
           <ion-card-content>
 
             <ion-row>
@@ -29,10 +32,8 @@
                 <ion-item>
                   <img slot="start" src="./assets/svg/folder-13.svg" style="width: 70px; height: 70px;">
                   <ion-col size="12">
-                    <ion-label>
-                      <p>{{ CustomerName }}</p>
-                      หมายเลขวงจร :  {{cus_id}}
-                    </ion-label>
+                    <ion-label>{{ CustomerName }}</ion-label>
+                    <ion-label>หมายเลขวงจร :  {{cus_id}}</ion-label>
                     ประเภทลูกค้า :  {{ typename }}
                   </ion-col>
                 </ion-item>
