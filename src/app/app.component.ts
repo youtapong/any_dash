@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'หน้าหลัก',
+      title: 'Home',
       url: '/home',
       icon: 'home'
     },
@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
       title: 'DNF Sector',
       url: '/dnf',
       icon: 'shield-checkmark'
+    },
+    {
+      title: 'About Us',
+      url: '/about-us',
+      icon: 'list'
     }
     
    
@@ -59,3 +64,5 @@ export class AppComponent implements OnInit {
     }
   }
 }
+
+

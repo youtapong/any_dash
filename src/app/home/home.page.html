@@ -1,16 +1,23 @@
 <ion-header>
-  <ion-toolbar color='darkblue'>
+  <!-- <ion-toolbar color='darkblue'> -->
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-icon slot="start" color="light" name="home"></ion-icon>
-    <ion-title>
+    <!-- <ion-icon slot="start" color="light" name="home"></ion-icon> -->
+    <ion-title color='light'>
       Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
   <ion-card class="welcome-card">
     <img src="./assets/images/logo01.png" alt="Main" />
     <ion-card-header>
@@ -38,13 +45,14 @@
               </ion-button>
             </ion-label>
           </ion-item>
-
-
-
-
-
         </ion-list>
       </p>
     </ion-card-content>
   </ion-card>
+
+  
+  
+  
+
+  
 </ion-content>
