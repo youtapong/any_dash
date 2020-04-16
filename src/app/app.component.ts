@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     },
     {
-      title: 'Customer',
+      title: 'ข้อมูลลูกค้า',
       url: '/customer',
       icon: 'body'
     },
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     {
       title: 'About Us',
       url: '/about-us',
-      icon: 'list'
+      icon: '../assets/svg/gift.svg'
     }
     
    

@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
+import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -20,7 +23,7 @@ export class HomePage  {
     console.log(this.checkLogin);
   }
 
-
+  
  
 
   goMixDash() {

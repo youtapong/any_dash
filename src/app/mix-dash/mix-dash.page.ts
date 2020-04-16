@@ -60,7 +60,7 @@ export class MixDashPage implements OnInit {
   sub: Subscription;
 
   constructor(
-    private navCtrl: NavController,
+    private NavController: NavController,
     private menu: MenuController,
     private http: HttpClient,
     private alertCtrl: AlertController,
