@@ -15,27 +15,27 @@ export class AppComponent implements OnInit {
     {
       title: 'Home',
       url: '/home',
-      icon: 'home'
+      icon: '../assets/svg/home-1.svg'
     },
     {
       title: 'Mix',
       url: '/mix-dash',
-      icon: 'paper-plane'
+      icon: '../assets/svg/app.svg'
     },
     {
       title: 'ข้อมูลลูกค้า',
       url: '/customer',
-      icon: 'body'
+      icon: '../assets/svg/users.svg'
     },
     {
       title: 'DNF Sector',
       url: '/dnf',
-      icon: 'shield-checkmark'
+      icon: '../assets/svg/notepad.svg'
     },
     {
       title: 'About Us',
       url: '/about-us',
-      icon: '../assets/svg/gift.svg'
+      icon: '../assets/svg/info.svg'
     }
     
    

@@ -14,6 +14,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RouterModule } from '@angular/router';
 
+// Barchart
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { RouterModule } from '@angular/router';
         path: '',
         component: DnfPage
       }
-    ])
+    ]),
+    ChartsModule
 
   ],
   declarations: [DnfPage]

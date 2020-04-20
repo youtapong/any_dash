@@ -14,6 +14,7 @@
 <ion-content class="ion-padding">
 
   
+  
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
@@ -81,12 +82,31 @@
         </div>        
       </ion-col>  
 
-      
-      
-                 
+      <!-- ----------------- Bar Chart ---------------------------------------------------------- -->
 
-  
+      <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>ข้อมูลวงจร</ion-card-subtitle>
+              <div style="display: block">
+                <canvas baseChart height="350"
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+              </div>
+            </ion-card-header> 
+          </ion-card>
+        </div>        
+      </ion-col>  
 
+      <!-- ----------------- Bar Chart ---------------------------------------------------------- -->
+
+   
   <!-- pie chart -->
   
       <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
@@ -116,6 +136,8 @@
           </ion-card>
         </div>  
       </ion-col>  
+
+      
 
       <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
         <div>
