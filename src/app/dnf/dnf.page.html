@@ -11,10 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-
-  
-  
+<ion-content class="ion-padding">   
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
@@ -60,13 +57,8 @@
       <ion-icon name="walk" slot="start"></ion-icon>
       <ion-label>Card Button Item 2</ion-label>
     </ion-item>
-  </ion-card>
-
-  
-  
-  
-
-  
+  </ion-card>   
+   
   <ion-grid>
     <ion-row>
       <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
@@ -118,10 +110,7 @@
             </ion-card-header>            
           </ion-card>
         </div>
-      </ion-col>
-
-
-      
+      </ion-col>     
     
 
       <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
@@ -136,6 +125,31 @@
           </ion-card>
         </div>  
       </ion-col>  
+
+      <!-- ----------------- Doughnut Chart ---------------------------------------------------------- -->
+
+      <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Pie Chart - Population </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData"
+                            [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType"
+                            (chartHover)="chartHovereds($event)"
+                            (chartClick)="chartClickeds($event)">
+                </canvas>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>  
+      </ion-col>  
+      
+      <!-- ----------------- Doughnut Chart ---------------------------------------------------------- -->
 
       
 
@@ -202,12 +216,8 @@
       <ng-template ngbTabContent>
         <p>Tab three content here</p>
       </ng-template>
-    </ngb-tab>
-
-   
-  </ngb-tabset>
-
-  
+    </ngb-tab>   
+  </ngb-tabset>  
 </ion-content>
 
 

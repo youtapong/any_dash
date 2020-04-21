@@ -34,17 +34,32 @@ export class DnfPage implements OnInit {
   ];
 
   // Chart events
-  public chartClicked(e:any):void {
+  public chartClickeds(e:any):void {
     console.log(e);
   }
   // Chart events
-  public chartHovered(e:any):void {
+  public chartHovereds(e:any):void {
     console.log(e);
   }
   
-
   //----------------- Bar Chart ----------------------------------------------------------
 
+  //----------------- Doughnut Chart ----------------------------------------------------------
+  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartData:number[] = [350, 450, 100];
+  public doughnutChartType:string = 'doughnut';
+
+// events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+  //----------------- Doughnut Chart ----------------------------------------------------------
+
+  
   pieChartData;
 
   // Tab Change Event
