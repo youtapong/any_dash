@@ -18,13 +18,18 @@ export class AppComponent implements OnInit {
       icon: '../assets/svg/home-1.svg'
     },
     {
-      title: 'Mix',
+      title: 'MixDash',
       url: '/mix-dash',
       icon: '../assets/svg/app.svg'
     },
     {
-      title: 'ข้อมูลลูกค้า',
+      title: 'Customer',
       url: '/customer',
+      icon: '../assets/svg/users.svg'
+    },
+    {
+      title: 'Custlist',
+      url: '/custlist',
       icon: '../assets/svg/users.svg'
     },
     {

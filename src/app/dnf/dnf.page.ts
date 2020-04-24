@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
+
+import * as Chart from 'chart.js';
 
 import * as HighCharts from 'highcharts';
 
@@ -42,6 +44,7 @@ export class DnfPage implements OnInit {
     console.log(e);
   }
   
+
   //----------------- Bar Chart ----------------------------------------------------------
 
   //----------------- Doughnut Chart ----------------------------------------------------------

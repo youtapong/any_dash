@@ -22,14 +22,20 @@ const routes: Routes = [
   {
     path: 'customer',
     loadChildren: () => import('./customer/customer.module').then( m => m.CustomerPageModule)
-  },
+  },  
   {
     path: 'dnf',
     loadChildren: () => import('./dnf/dnf.module').then( m => m.DnfPageModule)
-  },  {
+  },
+  {
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
+  {
+    path: 'custlist',
+    loadChildren: () => import('./custlist/custlist.module').then( m => m.CustlistPageModule)
   }
+
 
 ];
 

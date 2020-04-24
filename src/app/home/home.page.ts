@@ -24,12 +24,13 @@ export class HomePage  {
   }
 
   
- 
+
 
   goMixDash() {
     this.navCtrl.navigateForward('/mix-dash');
   }
 
+  
 
 
 

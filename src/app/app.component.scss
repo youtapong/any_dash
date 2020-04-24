@@ -121,9 +121,18 @@ ion-note {
   color: var(--ion-color-medium-shade);
 }
 
-ion-item.selected {
+// ion-item.selected {
+//   --color: var(--ion-color-primary);
+//   color: white;
+// }
+
+ion-item {
   --color: var(--ion-color-primary);
+  color: white;
 }
+
+
+
 
 // ion-content {
 //   --background: url(../../assets/background_full.jpg) no-repeat top center/cover fixed, #fff;
