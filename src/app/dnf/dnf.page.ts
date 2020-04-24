@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 // import Chart from 'chart.js';
-
 import * as Chart from 'chart.js';
-
 import * as HighCharts from 'highcharts';
 
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
+import { IpaddrService } from '../ipaddr.service';
+import { HttpClient } from '@angular/common/http';
+import { Subscription, from } from 'rxjs';
 
 @Component({
   selector: 'app-dnf',
@@ -16,54 +17,28 @@ import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DnfPage implements OnInit {
 
-  constructor() { }
+  public TOPServerityEvent    = '';
+  public pieChartData;
+  public doughnutChartLabels  = [];
+  public doughnutChartData    = [];
+  public doughnutChartType    = '';
 
-  //----------------- Bar Chart ----------------------------------------------------------
+  constructor(
+    private IpaddrService: IpaddrService,
+    public  http: HttpClient,
+  ) { }
 
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  //Chart Labels
-  public barChartLabels:string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
-
-  //Chart data
-  public barChartData:any[] = [
-    {data: [66, 55, 83, 82, 56, 51, 43], label: 'Loss'},
-    {data: [29, 38, 40, 21, 82, 30, 89], label: 'Profit'}
-  ];
-
-  // Chart events
-  public chartClickeds(e:any):void {
-    console.log(e);
-  }
-  // Chart events
-  public chartHovereds(e:any):void {
-    console.log(e);
-  }
-  
-
-  //----------------- Bar Chart ----------------------------------------------------------
-
-  //----------------- Doughnut Chart ----------------------------------------------------------
-  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData:number[] = [350, 450, 100];
-  public doughnutChartType:string = 'doughnut';
-
-// events
-  public chartClicked(e:any):void {
-    console.log(e);
+  ngOnInit() {
+    this.useAnotherOneWithWebpack();
+    this.useAngularLibrary();
+    this.doughnutChart();
+    // window.location.reload();
   }
 
-  public chartHovered(e:any):void {
-    console.log(e);
+  ionViewDidEnter() {
+    this.barChartPopulation();
+    this.pieChartBrowser();
   }
-  //----------------- Doughnut Chart ----------------------------------------------------------
-
-  
-  pieChartData;
 
   // Tab Change Event
   beforeChange($event: NgbTabChangeEvent) {
@@ -72,15 +47,40 @@ export class DnfPage implements OnInit {
       $event.preventDefault();
     }
   }
+  // ----------------- Bar Chart ----------------------------------------------------------
 
-  ngOnInit() {
-    this.useAnotherOneWithWebpack();
-    this.useAngularLibrary();
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+
+  // Chart Labels
+  public barChartLabels   = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
+  public barChartType     = 'bar';
+  public barChartLegend   = true;
+
+  // Chart data
+  public barChartData = [
+    {data: [66, 55, 83, 82, 56, 51, 43], label: 'Loss'},
+    {data: [29, 38, 40, 21, 82, 30, 89], label: 'Profit'}
+  ];
+  // ----------------- Bar Chart ----------------------------------------------------------
+
+  // ----------------- Doughnut Chart ----------------------------------------------------------
+  doughnutChart() {
+    this.doughnutChartLabels  = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+    this.doughnutChartData    = [350, 450, 100];
+    this.doughnutChartType    = 'doughnut';
+  }
+  // ----------------- Doughnut Chart ----------------------------------------------------------
+
+  // events
+   public chartClicked(e: any): void {
+    console.log(e);
   }
 
-  ionViewDidEnter() {
-    this.barChartPopulation();
-    this.pieChartBrowser();
+  public chartHovered(e: any): void {
+    console.log(e);
   }
 
   barChartPopulation() {
@@ -194,16 +194,16 @@ export class DnfPage implements OnInit {
   }
 
   useAnotherOneWithWebpack() {
-    var ctx = (<any>document.getElementById('canvas-chart')).getContext('2d');
-    var chart = new Chart(ctx, {
+    const ctx = (<any>document.getElementById('canvas-chart')).getContext('2d');
+    const chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'pie',
 
         // The data for our dataset
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [{
-              label: "My First dataset",
+              label: 'My First dataset',
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -228,22 +228,27 @@ export class DnfPage implements OnInit {
   }
 
   useAngularLibrary() {
+    const arrPieChart = [];
+    this.TOPServerityEvent = this.IpaddrService.TOPServerityEvent;
+    this.http.get<any>(this.TOPServerityEvent).subscribe(data => {
+      const arrayAlls = data.aggregations['2'].buckets;
+      arrPieChart.push(['Languages', 'Percent']);
+      for (const p of arrayAlls) {
+        arrPieChart.push([p['key'], p['doc_count']]);
+      }
+    });
+
     this.pieChartData = {
       chartType: 'PieChart',
-      dataTable: [
-        ['Languages', 'Percent'],
-        ['Ionic',     33],
-        ['Angular',      33],
-        ['JavaScript',  33]
-      ],
+      dataTable:  arrPieChart,
       options: {
-      'title': 'Technologies',
-      'width': 400,
-      'height': 300
+      // 'title': 'Technologies',
+      width: 400,
+      height: 300
       }
     };
-  }   
-  
+  }
+
 }
 
 
